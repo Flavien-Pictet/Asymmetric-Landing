@@ -1,0 +1,268 @@
+/* Base styles */
+.container {
+    padding: 18px;
+    margin: 30px 18px 0;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #A6A6A6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 200px;
+    text-align: center;
+    font-weight: 500;
+    color: #A6A6A6;
+    font-size: 16px !important;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #1F2937;
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background-color: #EFEFEF;
+    border: 1px solid #E3E3E3;
+    color: #000;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.02);
+}
+
+.app-showcase {
+    margin-top: 80px;
+    margin-left: -18px;
+    margin-right: -18px;
+    padding: 0 18px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.app-showcase:hover {
+    opacity: 0.95;
+}
+
+.app-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0;
+}
+
+.app-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.app-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-name {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.app-icon {
+    width: 45px;
+    height: 45px;
+}
+
+.app-title {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.app-subtitle {
+    font-size: 14px;
+    color: #A6A6A6;
+    font-weight: 400;
+}
+
+.screenshots-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    padding: 0 18px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.screenshots-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.screenshot {
+    flex: 0 0 auto;
+    width: 140px;
+    border-radius: 12px;
+    scroll-snap-align: start;
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+    .screenshots-grid {
+        gap: 18px;
+        padding: 0;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .screenshot {
+        width: 280px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .screenshots-grid {
+        gap: 14px;
+        padding: 0;
+        justify-content: flex-start;
+    }
+
+    .screenshot {
+        width: calc(25% - 24px);
+        max-width: 168px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 130px;
+        max-width: 1200px;
+        padding: 0 48px;
+    }
+
+    .title, .subtitle, .buttons {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .app-showcase {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    .screenshots-grid {
+        max-width: 800px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .title {
+        font-size: 54px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: normal;
+   
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: left;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+
+    .screenshot {
+        width: 30%;
+    }
+} 
+
+body {
+    font-family: 'SF Pro Display', sans-serif;
+} 
+
+/* Ajout d'une classe spécifique pour les étoiles */
+.rating-stars {
+    width: auto;
+    height: 14px; /* Ajustez selon vos besoins */
+} 
+
+.arrow-icon {
+    height: 10px; /* Réduit de 16px à 8px (50% plus petit) */
+} 
+
+.subtitle.optimize-subtitle {
+    font-size: 16px;
+    font-weight: 500; /* semi-bold */
+} 
+
+@media (max-width: 768px) {
+    .desktop-break {
+        display: none;
+    }
+} 
+
+/* Reduce margin only on mobile */
+@media (max-width: 767px) {
+    .app-showcase {
+        margin-top: 50px; /* Reduced by 30px on mobile */
+    }
+} 
